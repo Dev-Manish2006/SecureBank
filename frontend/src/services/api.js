@@ -1,14 +1,16 @@
 import axios from "axios";
 
+// ==========================
+// BASE URL (IMPORTANT FIX)
+// ==========================
 const API = axios.create({
-    baseURL: "https://cloud-banking-project.onrender.com/api"
+    baseURL: "https://securebank-1-sk9w.onrender.com/api"
 });
 
 
 // ==========================
 // REQUEST INTERCEPTOR
 // ==========================
-
 API.interceptors.request.use(
     (config) => {
 
@@ -29,7 +31,6 @@ API.interceptors.request.use(
 // ==========================
 // RESPONSE INTERCEPTOR
 // ==========================
-
 API.interceptors.response.use(
     (response) => {
         return response;
@@ -45,6 +46,5 @@ API.interceptors.response.use(
         return Promise.reject(error);
     }
 );
-
 
 export default API;

@@ -11,16 +11,25 @@ const app = express();
 
 
 // ==========================
+// 🔥 IMPORTANT FIX FOR RENDER
+// ==========================
+app.set('trust proxy', 1);
+
+
+// ==========================
 // SECURITY MIDDLEWARE
 // ==========================
 
 app.use(helmet());
 
 
-// 🔥 FIXED CORS (DEPLOY READY)
+// ==========================
+// CORS (PRODUCTION SAFE)
+// ==========================
+
 app.use(
     cors({
-        origin: "*",   // production safe testing
+        origin: "*",   // change later to frontend URL for strict security
         credentials: true
     })
 );
@@ -34,12 +43,14 @@ app.use(express.json({ limit: "10kb" }));
 
 
 // ==========================
-// RATE LIMIT
+// RATE LIMIT (FIXED FOR PROXY)
 // ==========================
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 100,
+    standardHeaders: true,
+    legacyHeaders: false,
     message: { message: "Too many requests, please try later" }
 });
 
@@ -62,7 +73,7 @@ app.use("/api/admin", require("./routes/adminRoutes"));
 // ==========================
 
 app.get("/", (req, res) => {
-    res.json({ message: "SecureBank API Running" });
+    res.json({ message: "SecureBank API Running 🚀" });
 });
 
 
@@ -80,7 +91,7 @@ app.use((req, res) => {
 // ==========================
 
 app.use((err, req, res, next) => {
-    console.error(err.stack);
+    console.error("❌ Error:", err);
     res.status(500).json({ message: "Internal Server Error" });
 });
 

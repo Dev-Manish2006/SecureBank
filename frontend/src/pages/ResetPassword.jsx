@@ -1,243 +1,153 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import API from "../services/api";
-import { useNavigate } from "react-router-dom";
+
+import "./ResetPassword.css";
+
 
 
 function ResetPassword(){
 
 
-    const navigate = useNavigate();
+const [token,setToken]=useState("");
 
+const [password,setPassword]=useState("");
 
-    const [token,setToken] = useState("");
 
-    const [password,setPassword] = useState("");
 
-    const [loading,setLoading] = useState(false);
 
+const resetPassword=async()=>{
 
 
+try{
 
 
+await API.post(
 
-    const resetPassword = async()=>{
+"/auth/reset-password",
 
+{
 
-        if(!token || !password){
+token,
 
+password
 
-            alert("Token and password required");
+}
 
-            return;
+);
 
 
-        }
 
+alert(
+"Password reset successful"
+);
 
 
+}
 
+catch(error){
 
 
-        try{
+alert(
 
+error.response?.data?.message ||
 
-            setLoading(true);
+"Reset failed"
 
+);
 
 
+}
 
 
-            await API.post(
+};
 
-                "/auth/reset-password",
 
-                {
 
-                    token,
 
-                    password
 
-                }
+return(
 
-            );
 
+<div className="reset-container">
 
 
+<div className="reset-card">
 
 
+<div className="reset-logo">
 
+🔑
 
-            alert(
+</div>
 
-                "Password reset successful"
 
-            );
 
+<h1>
 
+Reset <span>Password</span>
 
+</h1>
 
 
 
-            navigate("/login");
 
+<input
 
+placeholder="Reset Token"
 
+value={token}
 
+onChange={
+e=>setToken(e.target.value)
+}
 
-        }
+/>
 
-        catch(error){
 
 
-            alert(
 
-                error.response?.data?.message ||
+<input
 
-                "Reset failed"
+type="password"
 
-            );
+placeholder="New Password"
 
+value={password}
 
-        }
+onChange={
+e=>setPassword(e.target.value)
+}
 
-        finally{
+/>
 
 
-            setLoading(false);
 
 
-        }
+<button onClick={resetPassword}>
 
+Reset Password
 
-    };
+</button>
 
 
 
 
+<Link to="/login">
 
+Back Login
 
+</Link>
 
 
+</div>
 
-    return(
 
+</div>
 
-        <div>
 
-
-            <h1>
-                Reset Password
-            </h1>
-
-
-
-
-
-
-
-            <input
-
-
-                placeholder="Enter Reset Token"
-
-
-                value={token}
-
-
-                onChange={
-
-                    e=>setToken(e.target.value)
-
-                }
-
-
-            />
-
-
-
-
-
-
-
-            <br/><br/>
-
-
-
-
-
-
-
-            <input
-
-
-                type="password"
-
-
-                placeholder="Enter New Password"
-
-
-                value={password}
-
-
-                onChange={
-
-                    e=>setPassword(e.target.value)
-
-                }
-
-
-            />
-
-
-
-
-
-
-
-            <br/><br/>
-
-
-
-
-
-
-
-            <button
-
-                onClick={resetPassword}
-
-                disabled={loading}
-
-            >
-
-
-                {
-
-                    loading
-
-                    ?
-
-                    "Resetting..."
-
-                    :
-
-                    "Reset Password"
-
-                }
-
-
-
-            </button>
-
-
-
-
-
-
-        </div>
-
-
-    );
+);
 
 
 }
