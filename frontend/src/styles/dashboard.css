@@ -1,0 +1,433 @@
+body{
+
+    font-family: Arial, sans-serif;
+
+    background:#f4f7fb;
+
+    margin:0;
+
+}
+
+
+
+
+
+.dashboard{
+
+    min-height:100vh;
+
+    background:#f4f7fb;
+
+}
+
+
+
+
+
+
+
+.dashboard-content{
+
+    padding:30px;
+
+}
+
+
+
+
+
+
+
+.title{
+
+    color:#0f172a;
+
+    font-size:32px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+
+
+/* PROFILE */
+
+.profile-card{
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+
+
+
+
+/* STATS */
+
+.stats{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* CARD */
+
+.card{
+
+
+    background:white;
+
+
+    padding:25px;
+
+
+    border-radius:18px;
+
+
+    box-shadow:
+
+    0 8px 20px rgba(0,0,0,0.08);
+
+
+    transition:0.3s;
+
+
+    margin-top:20px;
+
+
+}
+
+
+
+
+
+.card:hover{
+
+
+    transform:translateY(-6px);
+
+
+    box-shadow:
+
+    0 12px 30px rgba(0,0,0,0.15);
+
+
+}
+
+
+
+
+
+
+
+
+
+.balance{
+
+
+    font-size:38px;
+
+
+    font-weight:bold;
+
+
+    color:#16a34a;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* INPUT */
+
+input{
+
+
+    padding:13px;
+
+
+    margin:10px;
+
+
+    width:250px;
+
+
+    border-radius:10px;
+
+
+    border:1px solid #cbd5e1;
+
+
+    outline:none;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+input:focus{
+
+
+    border-color:#2563eb;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* BUTTON */
+
+button{
+
+
+    padding:12px 22px;
+
+
+    border:none;
+
+
+    border-radius:10px;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    cursor:pointer;
+
+
+    transition:0.3s;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+button:hover{
+
+
+    opacity:0.9;
+
+
+    transform:scale(1.04);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* TRANSACTION */
+
+.transaction{
+
+
+    margin-top:30px;
+
+
+}
+
+
+
+
+
+
+
+.transaction-item{
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    padding:15px;
+
+
+    border-bottom:1px solid #e5e7eb;
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+
+
+.transaction-item:hover{
+
+
+    background:#f8fafc;
+
+
+}
+
+
+
+
+
+
+
+.transaction-item:last-child{
+
+
+    border-bottom:none;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* LOADING */
+
+.loading{
+
+
+    height:100vh;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    background:#f4f7fb;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+
+
+    .dashboard-content{
+
+
+        padding:15px;
+
+
+    }
+
+
+
+
+    .title{
+
+
+        font-size:25px;
+
+
+    }
+
+
+
+
+    input{
+
+
+        width:90%;
+
+
+    }
+
+
+
+
+    .transaction-item{
+
+
+        flex-direction:column;
+
+
+        gap:8px;
+
+
+        align-items:flex-start;
+
+
+    }
+
+
+
+}

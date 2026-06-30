@@ -1,0 +1,178 @@
+:root {
+  /* ===== Colors ===== */
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #ffffff;
+  --border: #e5e4e7;
+
+  --code-bg: #f4f3ec;
+
+  --accent: #0ea5e9;
+  --accent-bg: rgba(14, 165, 233, 0.1);
+  --accent-border: rgba(14, 165, 233, 0.4);
+
+  --shadow:
+    rgba(0, 0, 0, 0.08) 0 10px 20px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px;
+
+  /* ===== Fonts ===== */
+  --sans: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive font */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #0b1220;
+    --border: #1f2937;
+
+    --code-bg: #111827;
+
+    --accent: #38bdf8;
+    --accent-bg: rgba(56, 189, 248, 0.12);
+    --accent-border: rgba(56, 189, 248, 0.4);
+
+    --shadow:
+      rgba(0, 0, 0, 0.5) 0 10px 20px,
+      rgba(0, 0, 0, 0.3) 0 4px 6px;
+  }
+}
+
+/* ===== RESET ===== */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== ROOT APP LAYOUT ===== */
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+
+  border-inline: 1px solid var(--border);
+}
+
+/* ===== HEADINGS ===== */
+h1, h2 {
+  color: var(--text-h);
+  font-family: var(--heading);
+  margin: 0;
+}
+
+h1 {
+  font-size: 56px;
+  margin: 32px 0;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* ===== TEXT ===== */
+p {
+  line-height: 1.6;
+}
+
+/* ===== CODE STYLE ===== */
+code {
+  font-family: var(--mono);
+  background: var(--code-bg);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+/* ========================= */
+/* ⭐ UI IMPROVEMENTS */
+/* ========================= */
+
+/* 🔥 CARD HOVER EFFECT */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+
+  box-shadow: var(--shadow);
+
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔥 BUTTON SMOOTH EFFECT */
+button {
+  cursor: pointer;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 10px 14px;
+  font-weight: 500;
+
+  background: var(--accent);
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* ===== LINKS ===== */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

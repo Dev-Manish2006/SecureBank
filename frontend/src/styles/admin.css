@@ -1,0 +1,322 @@
+.admin-container {
+
+    padding:30px;
+
+    font-family:Arial, sans-serif;
+
+    background:#f4f7fb;
+
+    min-height:100vh;
+
+}
+
+
+
+
+
+.admin-container h1 {
+
+    text-align:center;
+
+    color:#1d3557;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+
+
+.stats-container {
+
+
+    display:flex;
+
+    gap:20px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+
+}
+
+
+
+
+
+
+
+.stat-card {
+
+
+    background:white;
+
+    padding:25px;
+
+    width:220px;
+
+    border-radius:15px;
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,0.1);
+
+    text-align:center;
+
+    transition:0.3s;
+
+
+}
+
+
+
+
+
+
+.stat-card:hover{
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+
+
+
+
+.stat-card h3{
+
+
+    color:#457b9d;
+
+
+}
+
+
+
+
+
+
+
+.section {
+
+
+    background:white;
+
+    padding:25px;
+
+    margin-top:30px;
+
+    border-radius:15px;
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,0.08);
+
+
+}
+
+
+
+
+
+
+
+.user-card,
+.account-card,
+.transaction-card {
+
+
+    padding:15px;
+
+    border-bottom:1px solid #ddd;
+
+
+}
+
+
+
+
+
+
+
+button {
+
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#1976d2;
+
+    color:white;
+
+    transition:0.3s;
+
+
+}
+
+
+
+
+
+
+
+button:hover {
+
+
+    opacity:0.85;
+
+    transform:scale(1.03);
+
+
+}
+
+
+
+
+
+
+
+.block-btn {
+
+
+    background:#d32f2f;
+
+
+}
+
+
+
+
+
+
+
+.unblock-btn {
+
+
+    background:#388e3c;
+
+
+}
+
+
+
+
+
+
+
+.table {
+
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:15px;
+
+
+}
+
+
+
+
+
+
+
+.table th,
+.table td {
+
+
+    padding:12px;
+
+    border-bottom:1px solid #ddd;
+
+    text-align:left;
+
+
+}
+
+
+
+
+
+
+
+.table th {
+
+
+    background:#1976d2;
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+
+.table tr:hover {
+
+
+    background:#f1f5f9;
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:700px){
+
+
+    .admin-container{
+
+
+        padding:15px;
+
+
+    }
+
+
+
+
+    .table{
+
+
+        display:block;
+
+        overflow-x:auto;
+
+
+    }
+
+
+
+    .stat-card{
+
+
+        width:90%;
+
+
+    }
+
+
+}

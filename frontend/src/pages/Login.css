@@ -1,0 +1,346 @@
+.login-container{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #2563eb
+    );
+
+    padding:20px;
+
+}
+
+
+
+
+
+.login-card{
+
+
+    background:white;
+
+    padding:40px;
+
+
+    border-radius:22px;
+
+
+    width:350px;
+
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,0.25);
+
+
+    text-align:center;
+
+
+    animation:slideUp 0.5s ease;
+
+
+}
+
+
+
+
+
+
+
+@keyframes slideUp{
+
+
+    from{
+
+        transform:translateY(30px);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+.login-logo{
+
+
+    font-size:50px;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+
+
+.login-card h1{
+
+
+    color:#0f172a;
+
+
+    font-size:32px;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+.login-card h1 span{
+
+
+    color:#2563eb;
+
+
+}
+
+
+
+
+
+
+
+.subtitle{
+
+
+    color:#64748b;
+
+
+    font-size:14px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+
+
+
+.login-card input{
+
+
+    width:90%;
+
+
+    margin:10px 0;
+
+
+    padding:14px;
+
+
+    border-radius:10px;
+
+
+    border:1px solid #cbd5e1;
+
+
+    font-size:15px;
+
+
+    outline:none;
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+
+
+
+.login-card input:focus{
+
+
+    border-color:#2563eb;
+
+
+    box-shadow:
+
+    0 0 8px rgba(37,99,235,0.3);
+
+
+}
+
+
+
+
+
+
+
+
+.login-card button{
+
+
+    width:95%;
+
+
+    margin-top:20px;
+
+
+    padding:14px;
+
+
+    border:none;
+
+
+    border-radius:10px;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    font-size:16px;
+
+
+    cursor:pointer;
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+
+
+.login-card button:hover{
+
+
+    transform:scale(1.03);
+
+
+    opacity:0.9;
+
+
+}
+
+
+
+
+
+
+
+.login-card button:disabled{
+
+
+    opacity:0.6;
+
+
+    cursor:not-allowed;
+
+
+}
+
+
+
+
+
+
+
+
+.login-card a{
+
+
+    display:block;
+
+
+    margin-top:18px;
+
+
+    color:#2563eb;
+
+
+    text-decoration:none;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+.login-card a:hover{
+
+
+    text-decoration:underline;
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:500px){
+
+
+    .login-card{
+
+
+        width:90%;
+
+
+        padding:30px;
+
+
+    }
+
+
+
+    .login-card h1{
+
+
+        font-size:26px;
+
+
+    }
+
+
+}
