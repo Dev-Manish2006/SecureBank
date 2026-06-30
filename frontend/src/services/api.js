@@ -1,111 +1,50 @@
 import axios from "axios";
 
-
-
 const API = axios.create({
-
-    baseURL:"http://localhost:5000/api"
-
+    baseURL: "https://cloud-banking-project.onrender.com/api"
 });
 
 
-
-
-
-
+// ==========================
 // REQUEST INTERCEPTOR
+// ==========================
 
 API.interceptors.request.use(
-
-    (config)=>{
-
+    (config) => {
 
         const token = localStorage.getItem("token");
 
-
-
-        if(token){
-
-
-            config.headers.Authorization =
-            `Bearer ${token}`;
-
-
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
         }
-
-
 
         return config;
-
-
     },
-
-    (error)=>{
-
-
+    (error) => {
         return Promise.reject(error);
-
-
     }
-
 );
 
 
-
-
-
-
-
-
+// ==========================
 // RESPONSE INTERCEPTOR
-
+// ==========================
 
 API.interceptors.response.use(
-
-
-    (response)=>{
-
-
+    (response) => {
         return response;
-
-
     },
+    (error) => {
 
-
-    (error)=>{
-
-
-        if(
-
-            error.response?.status === 401
-
-        ){
-
-
+        if (error.response?.status === 401) {
             localStorage.removeItem("token");
-
             localStorage.removeItem("user");
-
-
-            window.location.href="/login";
-
-
+            window.location.href = "/login";
         }
 
-
-
-
         return Promise.reject(error);
-
-
     }
-
-
 );
-
-
-
-
 
 
 export default API;
